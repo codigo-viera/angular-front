@@ -1,0 +1,74 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>mx.com.tsys</groupId>
+	<artifactId>tsys-front-end-skeleton</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>tsys-front-end-skeleton</name>
+	<url>http://maven.apache.org</url>
+
+	<developers>
+		<developer>
+			<id>jviera</id>
+			<name>Jose B. Viera Rebolledo</name>
+			<email>jviera.dev@gmail.com</email>
+			<organization>TSYS Services de Mexico</organization>
+			<timezone>-6</timezone>
+		</developer>
+	</developers>
+
+	<properties>
+		<jdk.version>1.6</jdk.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.artifactId>tsys-front-end-skeleton</project.artifactId>
+		<angularjs.version>1.4.3</angularjs.version>
+		<jquery.version>2.1.4</jquery.version>
+		<bootstrap.version>3.3.5</bootstrap.version>
+		<font.awesome.version>4.4.0</font.awesome.version>
+		<ionicons.version>2.0.1</ionicons.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>angularjs</artifactId>
+			<version>${angularjs.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars.bower</groupId>
+			<artifactId>angular-route</artifactId>
+			<version>${angularjs.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>jquery</artifactId>
+			<version>${jquery.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>${bootstrap.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>ionicons</artifactId>
+			<version>${ionicons.version}</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>${project.artifactId}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

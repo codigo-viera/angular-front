@@ -1,0 +1,27 @@
+<aside class="main-sidebar" ng-controller="MenuController">
+	<section class="sidebar">
+		<ul class="sidebar-menu">
+			<li class="header">Principal</li>
+
+			<li class="{{alta}} {{admin}}"><a ng-click="linkAlta()"><i
+					class="fa fa-link"> </i> <span>Alta Usuarios</span></a></li>
+			<li class="{{baja}} {{admin}}"><a ng-click="linkBaja()"><i
+					class="fa fa-link"> </i> <span>Baja de Usuarios</span></a></li>
+			<li class="{{report}} {{admin}}"><a ng-click="linkReporte()"><i
+					class="fa fa-link"> </i> <span>Reporte de usuarios</span></a></li>
+			<li ><a ng-click="linkForm()"> <i
+					class="fa fa-link"> </i> <span>Formularios basico</span>
+			</a></li>
+			<li class="{{usr}}"><a ng-click="linkTablas()"> <i class="fa fa-link"> </i>
+					<span>Tablas</span>
+			</a></li> 
+			<li class="treeview {{usr}}"><a><i class="fa fa-link"></i> <span>Paginas</span>
+					<i class="fa fa-angle-left pull-right"></i></a>
+				<ul class="treeview-menu">
+					<li><a ng-click="linkBloqueo()">Bloqueo</a></li>
+					<li><a ng-click="error404()">404</a></li>
+					<li><a ng-click="error500()">500</a></li>
+				</ul></li>
+		</ul>
+	</section>
+</aside>

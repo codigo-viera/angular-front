@@ -1,0 +1,75 @@
+
+<!-- Menu -->
+<div ng-include src="'views/partials/menu.html'"></div>
+<!-- Contenido -->
+<div class="wrapper">
+		<div class="content-wrapper">
+			<section class="content-header">
+				<h1>
+					{{varHeader}} <small>{{varDescription}}</small>
+				</h1>
+			</section>
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="box">
+						<!-- /.box-header -->
+						<div class="box-body">
+							<div align="right">
+								<div class="input-group">
+									<input class="form-control" type="search" ng-model="q"
+										placeholder="Buscar" aria-describedby="basic-addon1" /> <span
+										class="glyphicon glyphicon-search form-control-feedback"></span>
+								</div>
+							</div>
+							<table id="example2" class="table table-bordered table-hover">
+								<thead>
+									<tr>
+										<!-- <th>Selecciona</th> -->
+										<th>Fecha de Alta</th>
+										<th>Usuario</th>
+										<th>Nombre</th>
+										<th>Estatus</th>
+										<th>Modificar</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr ng-repeat="usr in users | filter:q as results ">
+										<!-- <td align="center"><input type="radio" name="usuario"
+											ng-model="$parent.usrBorrar" ng-value="usr"></td> -->
+										<td>{{usr.fechaAlta}}</td>
+										<td>{{usr.email}}</td>
+										<td>{{usr.nombre}} {{usr.apPaterno}} {{usr.apMaterno}}</td>
+										<td>{{usr.nameStatus}}</td>
+										<td align="center"><button class="btn btn-success" 
+												ng-click="resetPswd(usr)">Reset</button>
+												<button class="btn btn-success" 
+												ng-click="baja(usr)">Baja</button>
+												</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<section class="content"></section>
+		</div>
+</div>
+<script src="resources/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="resources/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="resources/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="resources/plugins/fastclick/fastclick.min.js"></script>
+<script>
+	$(function() {
+		$("#example1").DataTable();
+		$('#example2').DataTable({
+			"paging" : true,
+			"lengthChange" : false,
+			"searching" : false,
+			"ordering" : false,
+			"info" : true,
+			"autoWidth" : false
+		});
+	});
+</script>
+

@@ -1,0 +1,28 @@
+<div class="wrapper">
+		<form ng-submit="resetPswd()">
+			<div class="content-wrapper" align="center">
+				<section class="content-header">
+					<h1>
+						Cambio de Contrase&ntilde;a <small>Por olvido de
+							contrase&ntilde;a</small>
+					</h1>
+				</section>
+				<div class="box-body" style="width: 800px">
+					<input class="form-control input-lg" type="email"
+						placeholder="Usuario@ejemplo.com" ng-model="usr" required 
+						title="Recuerda que si eres administrador, no puedes cambiar por esta via la contrase&ntilde;a">
+					<br>
+				</div>
+				<div class="row" style="width: 800px">
+					<div class="box-body">
+						<button type="submit" class="btn btn-success btn-block">Cambio
+							de contraseña</button>
+					</div>
+					<div class="box-body" style="width: 20%">
+						<button class="btn btn-success btn-block" ng-click="login()">Regresar</button>
+					</div>
+				</div>
+				<section class="content"></section>
+			</div>
+		</form>
+</div>

@@ -1,0 +1,97 @@
+
+<!-- Menu -->
+<div ng-include src="'views/partials/menu.html'"></div>
+<!-- Contenido -->
+<div class="wrapper" >
+	<div class="content-wrapper">
+		<div class="content-header" >
+			<h1>
+				{{varHeader}} <small>{{varDescription}}</small>
+			</h1>
+			<div class="well">
+				<table>
+					<tr>
+						<td><label>Fecha de Inicio</label>
+							<div class="input-append date">
+								<input ng-model="date" type="text" datepicker required> <span class="add-on"
+									style="cursor: pointer;"> <i
+									class="glyphicon glyphicon-calendar"></i>
+								</span>
+							</div></td>
+						 <td><label>Fecha de Final</label>
+							<div class="input-append date">
+								<input ng-model="dateFin" type="text" datepicker required> <span class="add-on"
+									style="cursor: pointer;"> <i
+									class="glyphicon glyphicon-calendar"></i>
+								</span>
+							</div></td>
+					</tr>
+				</table>
+				<div align="right">
+					<button class="btn btn-success" ng-click="find()">Buscar</button>
+				</div>
+			</div>
+		</div>
+		<div class="row" ng-if="users.length > 0">
+			<div class="col-xs-12">
+				<div class="box">
+					<!-- /.box-header -->
+					<div class="box-body">
+						<div align="right">
+							<div class="input-group">
+								<input class="form-control" type="search" ng-model="q"
+									placeholder="Buscar" aria-describedby="basic-addon1" /> <span
+									class="glyphicon glyphicon-search form-control-feedback"></span>
+							</div>
+						</div>
+						<table id="example2" class="table table-bordered table-hover">
+							<thead>
+								<tr>
+									<!-- <th>Selecciona</th> -->
+									<th>Fecha de Alta</th>
+									<th>Usuario</th>
+									<th>Nombre</th>
+									<th>Estatus</th>
+									<th>No. de Cuenta</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="usr in users | filter:q as results ">
+									<!-- <td align="center"><input type="radio" name="usuario"
+											ng-model="$parent.usrBorrar" ng-value="usr"></td> -->
+									<td>{{usr.fechaAlta}}</td>
+									<td>{{usr.email}}</td>
+									<td>{{usr.nombre}} {{usr.apPaterno}} {{usr.apMaterno}}</td>
+									<td>{{usr.nameStatus}}</td>
+									<td>XXXXXXXXXXXXXX,XXXXXXXXX</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<section class="content"></section>
+	</div>
+</div>
+<script src="resources/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="resources/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="resources/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="resources/plugins/fastclick/fastclick.min.js"></script>
+<script src="resources/plugins/jQueryUI/jquery-ui.min.js"></script>
+<!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"> -->
+<script type="text/javascript">
+	$(function() {
+		$("#example1").DataTable();
+		$('#example2').DataTable({
+			"paging" : true,
+			"lengthChange" : false,
+			"searching" : false,
+			"ordering" : false,
+			"info" : true,
+			"autoWidth" : false
+		});
+	});
+	
+</script>
+

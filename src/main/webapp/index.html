@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="StarterApp">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Banjercito</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<!-- Bootstrap Core CSS-->
+	<link rel="stylesheet" href="webjars/bootstrap/3.3.5/css/bootstrap.min.css" type="text/css" />
+	<link rel="stylesheet" href="webjars/ionicons/2.0.1/css/ionicons.min.css" type="text/css" />
+	<link rel="stylesheet" href="resources/lib/font-awesome/4.4.0/css/font-awesome.min.css" type="text/css" />
+	<link rel="stylesheet" href="resources/css/AdminLTE.min.css" type="text/css" />
+	<link rel="stylesheet" href="resources/css/skins/_all-skins.min.css" type="text/css" />
+	<link rel="stylesheet" href="resources/plugins/datatables/dataTables.bootstrap.css" type="text/css" />
+</head>
+<body class="hold-transition skin-green sidebar-mini ">
+	<!-- Encabezado -->
+	<header class="main-header"  ng-controller="indexController">
+		<a class="logo" style="height: 80px;"> <span class="logo-mini"> <b>3D</b>
+		</span> <span class="logo-lg"> <b>Banjercito</b>
+		</span>
+		</a>
+
+		<nav class="navbar navbar-static-top" style="background-image: url('resources/img/encabezadoBnjrcto.png');
+			background-repeat: no-repeat; background-position:center; height: 80px;" role="navigation">
+			<a class="sidebar-toggle" data-toggle="offcanvas" role="button">
+				<span class="sr-only">Toggle navigation</span>
+			</a>
+			<div class="navbar-custom-menu">
+				<ul class="nav navbar-nav">
+					<li class="dropdown user user-menu"><a class="dropdown-toggle"
+						data-toggle="dropdown"> <img src="resources/img/user.png"
+							class="user-image" alt="User Image"> <span
+							class="hidden-xs">{{loginUser}}</span>
+					</a>
+						<ul class="dropdown-menu">
+							<li class="user-header"><img src="resources/img/user.png"
+								class="img-circle" alt="User Image">
+								<p>
+									{{loginUser}} 
+								</p></li>
+
+							<li class="user-footer">
+								<div class="pull-left">
+									<a class="btn btn-default btn-flat">Perfil</a>
+								</div>
+								<div class="pull-right" ng-click="logout()">
+									<a class="btn btn-default btn-flat">Cerrar sessión</a>
+								</div>
+							</li>
+						</ul></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<!-- Contenido -->
+	<div ng-view></div>
+	<!-- JavaScript Lib -->
+	<script src="webjars/jquery/2.1.4/jquery.min.js"></script>
+	<script src="webjars/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="webjars/angularjs/1.4.3/angular.js"></script>
+	<script src="webjars/angularjs/1.4.3/angular-route.js"></script>
+	<!-- Angular app -->
+	<script type='text/javascript' src="resources/js/app.js"></script>
+	<script type='text/javascript' src="resources/js/appConfig.js"></script>
+	<script type='text/javascript' src="resources/js/appController.js"></script>
+	<script type='text/javascript' src="resources/js/appRoute.js"></script>
+	<script type='text/javascript' src="resources/lib/js/app.js"></script>
+</body>
+</html>

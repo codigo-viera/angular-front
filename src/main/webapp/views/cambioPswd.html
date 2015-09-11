@@ -1,0 +1,38 @@
+<div class="wrapper">
+	<form ng-submit="cambioPswd()">
+		<div class="content-wrapper">
+			<section class="content-header">
+				<h1>
+					Cambio de Contrase&ntilde;a <small>Para usar su portal,
+						favor de cambiar la contrase&ntilde;a</small>
+				</h1>
+			</section>
+			<div class="box-body">
+				<input class="form-control input-lg" type="email"
+					placeholder="{{loginUser}}" ng-model="usr" value="{{loginUser}}"
+					disabled="disabled"> <br> <input
+					title="La contraseña debe tener al menos 1 caracter Mayuscula, 1 Minuscula, 1 Numero, No caracteres especiales, longitud minima de 10 caracteres"
+					pattern="(^(?=.*[a-z])(?=.*[A-Z])(?=.*\d){10,20}.+$)" required class="form-control input-lg"
+					type="password" placeholder="Contrase&ntilde;a nueva"
+					ng-model="pswd"> <br> <input
+					title="1 caracter Mayuscula, 1 Minuscula, 1 Numero, No caracteres especiales"
+					pattern="(^(?=.*[a-z])(?=.*[A-Z])(?=.*\d){10,20}.+$)" required class="form-control input-lg"
+					type="password" placeholder="Repite contrase&ntilde;a"
+					ng-model="pswd2"> <br>
+			</div>
+			<div style="display: {{alertMessageDisplay}}">
+				<div class="callout callout-warning">
+					<h4>{{alertMessage}}</h4>
+					<p>{{alertMessageDescription}}</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="box-body">
+					<button type="submit" class="btn btn-success btn-block">Actualiza</button>
+				</div>
+			</div>
+
+			<section class="content"></section>
+		</div>
+	</form>
+</div>

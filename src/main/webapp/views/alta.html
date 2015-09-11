@@ -1,0 +1,32 @@
+
+<!-- Menu -->
+<div ng-include src="'views/partials/menu.html'"></div>
+<!-- Contenido -->
+<div class="wrapper" >
+	<form ng-submit="alta()">
+		<div class="content-wrapper" align="center">
+			<section class="content-header">
+				<h1>
+					{{varHeader}} <small>{{varDescription}}</small>
+				</h1>
+			</section>
+			
+			<div class="box-body" style="width: 800px;" >
+				<input class="form-control input-lg" type="text"
+					placeholder="Nombres" required="required" ng-model="nombre"> <br> <input
+					class="form-control input-lg" type="text" placeholder="Apellido Paterno" required="required" ng-model="apPaterno">
+				<br> <input class="form-control input-lg" type="text"
+					placeholder="Apellido Materno" required="required" ng-model="apMaterno"> <br> <input
+					class="form-control input-lg" type="email"
+					placeholder="Correo electronico" accept="email" required="required" ng-model="username"> <br>
+			</div>
+			<div class="row" style="width: 700px;" >
+				<div class="box-body">
+					<button type="submit" class="btn btn-success btn-block">Agrega</button>
+				</div>
+			</div>
+
+			<section class="content"></section>
+		</div>
+	</form>
+</div>
